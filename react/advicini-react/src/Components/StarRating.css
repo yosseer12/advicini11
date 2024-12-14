@@ -1,0 +1,19 @@
+/* StarRating.css */
+.star-rating {
+    display: inline-block;
+  }
+  
+  .star-rating span {
+    font-size: 24px; /* Adjust the size of the stars */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .star-rating span:hover {
+    color: gold; /* Highlight stars on hover */
+  }
+  
+  .star-rating span.selected {
+    color: gold; /* Color for the selected stars */
+  }
+  

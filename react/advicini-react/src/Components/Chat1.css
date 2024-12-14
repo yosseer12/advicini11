@@ -1,0 +1,149 @@
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    max-height: 700px;
+    margin: 30px auto;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #ffffff, #f2f2f2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+}
+
+/* Header with Status Indicator */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    background: linear-gradient(90deg, #1d3557, #457b9d);
+    color: white;
+    font-size: 18px;
+}
+
+.chat-header .status-indicator {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #1abc9c; /* Online */
+    margin-right: 10px;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.6);
+}
+
+/* Message Bubbles */
+.message {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    font-size: 16px;
+    position: relative;
+    animation: fadeInMessage 0.4s ease-in-out;
+}
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-advicini {
+    background: linear-gradient(145deg, #457b9d, #1d3557);
+    color: white;
+    align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message-user {
+    background: linear-gradient(145deg, #e0f7fa, #b2ebf2);
+    color: #333;
+    align-self: flex-end;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Timestamp Styling */
+.message::after {
+    content: attr(data-time);
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
+
+/* Input Section with Icon Buttons */
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.input-container input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-container input:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-container .send-button {
+    margin-left: 10px;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #1d3557, #457b9d);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.input-container .send-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #457b9d, #1d3557);
+}
+
+/* Chat Background Animation */
+.message-list {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom right, #f7f7f7, #ececec);
+    position: relative;
+}
+
+.message-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://source.unsplash.com/800x600/?technology,gradient') no-repeat center/cover;
+    opacity: 0.1;
+    pointer-events: none;
+}

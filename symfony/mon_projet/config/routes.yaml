@@ -1,0 +1,17 @@
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+# config/routes.yaml
+send_message:
+    path: /api/messages
+    controller: App\Controller\MessageController::sendMessage
+    methods: POST
+signup:
+    path: /api/SignUp
+    controller: App\Controller\UserController::signUp
+    methods: [GET, POST] # Define allowed HTTP methods if needed
+

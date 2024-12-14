@@ -1,0 +1,78 @@
+.alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff3cd;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  .alert-icon {
+    color: #856404;
+    margin-right: 8px;
+  }
+  
+  .alert-message {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .alert-close {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .form-selection {
+    margin-bottom: 15px;
+  }
+  
+  .form-selection button {
+    background-color: #110746;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-selection button:hover {
+    background-color: #110746;
+  }
+  
+  .signup-form, .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .signup-form input, .login-form input {
+  margin: 10px 0;        /* Espacement vertical entre les champs */
+  padding: 8px;          /* Espacement intérieur pour améliorer la lisibilité */
+  border: 1px solid #ccc; /* Bordure légère autour des champs */
+  border-radius: 5px;     /* Bordure arrondie */
+  font-size: 14px;        /* Taille de la police pour une meilleure lisibilité */
+  width: 100%;            /* Chaque champ occupe 100% de la largeur de son conteneur */
+  box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+}
+
+  
+  .signup-form button, .login-form button {
+    background-color: #110746;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .signup-form button:hover, .login-form button:hover {
+    background-color: #110746;
+  }
+  
