@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './BonPlan.css';
+import { Link } from 'react-router-dom';
+import SignUp from "../pages/SignUpPage";
 import StarRating from './StarRating'; // Adjust the path if necessary
 import Tacos from "../pages/Tacos";
 const BonPlanComponents = () => {
@@ -63,7 +65,11 @@ const BonPlanComponents = () => {
           longitude: 10.1879,
           Tel: "+216 58 799 209",
            category: "café-restaurant",
-          images: ["/images/dinapoli1.jpg", "/images/dinapoli2.jpg", "/images/dinapoli3.jpg","/images/dinapoli1.jpg","/images/dinapoli2.jpg"],
+          images: ["/images/dinapoli1.jpg", "/images/dinapoli2.jpg", "/images/dinapoli3.jpg","/images/dinapoli1.jpg","/images/dinapoli2.jpg","/images/dinapoli1.jpg"],
+          userProfile: {
+            name: "Jane Smith",
+            profileImage: "/images/john.jfif", // Image du profil
+          }
         },
         { 
           id: 5, 
@@ -75,7 +81,7 @@ const BonPlanComponents = () => {
           images: ["/images/716.jpg", "/images/7162.jpg","/images/7163.jpg","/images/7164.jpg","/images/7165.jpg","/images/7166.jpg"],
           userProfile: {
             name: "Jane Smith",
-            profileImage: "/images/jane_profile.jpg", // Image du profil
+            profileImage: "/images/john.jfif", // Image du profil
           }
         },
         { 
@@ -202,12 +208,11 @@ const handleCategoryClick = (category) => {
       
 
       </div>
-      <div class="offer-banner">
-  <a  href="../pages/SignUpPage" class="order-button">Commander</a>
-  <div class="offer">
-    <p class="offer-text">-30% sur vos premiers commandes !</p>
+      <div className="offer-banner">
+  <Link to="/SignUpPage" className="order-button">Poster</Link>
+  <div className="offer">
+    <p class="offer-text">-30% sur vos premiers postes !</p>
   </div>
-  
 
 </div>
  {/* Category Bar */}
