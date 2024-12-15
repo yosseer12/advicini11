@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import BonPlan from './Components/BonPlan';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
+import BonPlan22 from './Components/BonPlan22';
 import './pages/Tacos.css';
 import Tacos from './pages/Tacos';
 
@@ -23,6 +24,8 @@ function App()
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/pages/Tacos" element={<Tacos/>} />
+        <Route path="/BonPlan22" element={<BonPlan22 />} />
+
 
    
       </Routes>

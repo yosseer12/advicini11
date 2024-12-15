@@ -1,0 +1,127 @@
+.popup-content h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #007bff; /* Couleur bleue pour le titre */
+}
+
+/* Fond de la popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenu de la popup */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 700px;
+}
+.popup-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Styles communs pour les champs Titre et Description */
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Assure que le padding ne dépasse pas la largeur */
+}
+
+/* Ajustement spécifique pour le textarea */
+.popup-content textarea {
+  height: 150px; /* Hauteur plus importante pour la description */
+  resize: vertical; /* Permet de redimensionner verticalement */
+}
+
+/* Effet de focus sur les champs */
+.popup-content input:focus,
+.popup-content textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Conteneur de la carte */
+.map-container {
+  margin: 20px 0;
+}
+
+/* Boutons dans la popup */
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Bouton "Ajouter" */
+.popup-actions button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Effet de hover pour le bouton "Ajouter" */
+.popup-actions button:first-child:hover {
+  background-color: #0056b3; /* Bleu plus foncé */
+}
+
+/* Bouton "Fermer" */
+.popup-actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Popup de succès */
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(18, 46, 206, 0.9); /* Couleur verte semi-transparente */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

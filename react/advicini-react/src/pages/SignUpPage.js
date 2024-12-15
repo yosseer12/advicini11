@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css';
 import { Link, useNavigate } from 'react-router-dom';
+import Login from './LoginPage';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -9,9 +10,16 @@ const SignUp = () => {
   const [address, setAddress] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
     const userData = {
       name,
       firstName,
@@ -19,6 +27,7 @@ const SignUp = () => {
       address,
       password,
     };
+
     try {
       const response = await fetch('http://localhost:8000/api/SignUp', {
         method: 'POST',
@@ -27,13 +36,16 @@ const SignUp = () => {
         },
         body: JSON.stringify(userData),
       });
+
       if (response.ok) {
-        navigate('/welcome', { state: { name, firstName } }); 
+        alert('Inscription réussie !');
+        navigate('/BonPlan22', { state: { name, firstName } });
       } else {
-        console.error('Error creating user');
+        alert('Erreur lors de la création de l\'utilisateur. Veuillez réessayer.');
       }
     } catch (error) {
       console.error('Fetch error: ', error);
+      alert('Une erreur est survenue. Veuillez réessayer.');
     }
   };
 
@@ -43,12 +55,10 @@ const SignUp = () => {
         <img src="./login.png" alt="" className="SignUp__img" />
         <form onSubmit={handleSubmit} className="SignUp__form">
           <div>
-            <h1 className="SignUp__title">
-              <span> </span>
-            </h1>
+            <h1 className="SignUp__title">Inscription</h1>
             <p className="signup__link">
-              Vous avez déjà un compte?
-              <Link to="/login" className="signup__link-text"> Connexion ici</Link>
+              Vous avez déjà un compte ?{' '}
+              <Link to="/login" className="signup__link-text">Connexion ici</Link>
             </p>
           </div>
           <div>
@@ -57,7 +67,7 @@ const SignUp = () => {
                 <label htmlFor="input-name" className="SignUp__label">Nom</label>
                 <input
                   type="text"
-                  placeholder="Entrer votre Nom"
+                  placeholder="Entrer votre nom"
                   required
                   className="SignUp__input"
                   id="input-name"
@@ -69,7 +79,7 @@ const SignUp = () => {
                 <label htmlFor="input-firstname" className="SignUp__label">Prénom</label>
                 <input
                   type="text"
-                  placeholder="Entrer votre Prénom"
+                  placeholder="Entrer votre prénom"
                   required
                   className="SignUp__input"
                   id="input-firstname"
@@ -81,7 +91,7 @@ const SignUp = () => {
                 <label htmlFor="input-email" className="SignUp__label">Email</label>
                 <input
                   type="email"
-                  placeholder="Entrer votre Email"
+                  placeholder="Entrer votre email"
                   required
                   className="SignUp__input"
                   id="input-email"
@@ -90,10 +100,10 @@ const SignUp = () => {
                 />
               </div>
               <div>
-                <label htmlFor="input-address" className="SignUp__label">Adresse à domicile</label>
+                <label htmlFor="input-address" className="SignUp__label">Adresse</label>
                 <input
                   type="text"
-                  placeholder="Entrer votre Adresse à domicile"
+                  placeholder="Entrer votre adresse"
                   required
                   className="SignUp__input"
                   id="input-address"
@@ -102,7 +112,7 @@ const SignUp = () => {
                 />
               </div>
               <div>
-                <label htmlFor="input-password" className="SignUp__label">Mot De Passe</label>
+                <label htmlFor="input-password" className="SignUp__label">Mot de passe</label>
                 <input
                   type="password"
                   placeholder="Entrer un mot de passe"
@@ -114,28 +124,22 @@ const SignUp = () => {
                 />
               </div>
               <div>
-  <label htmlFor="input-confirm-password" className="SignUp__label">Confirmer le Mot De Passe</label>
-  <input
-    type="password"
-    placeholder="Confirmer le mot de passe"
-    required
-    className="SignUp__input"
-    id="input-confirm-password"
-    value={confirmPassword}
-    onChange={(e) => setConfirmPassword(e.target.value)}
-  />
-</div>
-
+                <label htmlFor="input-confirm-password" className="SignUp__label">Confirmer le mot de passe</label>
+                <input
+                  type="password"
+                  placeholder="Confirmer le mot de passe"
+                  required
+                  className="SignUp__input"
+                  id="input-confirm-password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
             </div>
           </div>
           <div>
-            <div className="SignUp__buttons">
-              
-            <button
-    type="submit" // This prevents the form from being submitted
-    onClick={() => navigate('/welcomeAdmin')}
-    className="SignUp__button"
-  >SignUp</button>
+            <div className="SignUp__buttons" >
+              <button type="submit" className="SignUp__button">S'inscrire</button>
             </div>
           </div>
         </form>

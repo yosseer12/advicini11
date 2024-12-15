@@ -8,6 +8,9 @@ const Login = () => {
     const [rememberMe, setRememberMe] = useState(false);
     const navigate = useNavigate();
 
+
+    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const loginData = { email, password };
@@ -29,7 +32,7 @@ const Login = () => {
                     navigate('/pages/welcome', { state: { name: userData.user.name, firstName: userData.user.firstName } });
                 } else {
                     // Navigate to the homepage after login
-                    navigate('/', { state: { name: userData.user.name, firstName: userData.user.firstName } });
+                    navigate('/Components/BonPlan22', { state: { name: userData.user.name, firstName: userData.user.firstName } });
                 }
             } else {
                 console.error('Login failed');
@@ -95,8 +98,9 @@ const Login = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="login__buttons">
-                            <button onClick={() => navigate('/BonPlan22')} type="submit" className="login__button">Log In</button>
+                        <div className="login__buttons" onClick={handleSubmit}>
+                        <button type="submit" className="login__button">Log In</button>
+
                         </div>
                     </div>
                 </form>
