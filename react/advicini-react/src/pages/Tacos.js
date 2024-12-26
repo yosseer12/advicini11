@@ -52,6 +52,8 @@ const tacosData = [
   const Tacos = () => {
     return (
       <div className="tacos-page">
+        <div className="tacos-title">   Tacos </div>
+        
         <div className="tacos-list">
           {tacosData.map((taco, index) => (
             <div className="taco-item" key={index}>
@@ -71,6 +73,7 @@ const tacosData = [
               <p className="taco-delivery">{taco.deliveryTime}</p>
             </div>
           ))}
+          
         </div>
       </div>
     );

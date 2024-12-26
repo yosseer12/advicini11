@@ -42,4 +42,28 @@
     border-radius: 8px; /* Coins arrondis */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet visuel */
   }
-    
+  .tacos-description {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .tacos-description h2, 
+  .tacos-description h3 {
+    color: #140361;
+    margin-bottom: 10px;
+  }
+  
+  .tacos-description p {
+    margin-bottom: 15px;
+  }
+  
+  .tacos-title {
+    text-align: center;
+    color: #fdfdfd;
+    margin-bottom: 30px;
+  }
